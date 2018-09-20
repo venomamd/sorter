@@ -1,8 +1,7 @@
 class Sorter { 
   constructor() { 
   // your implementation 
-    this.arr = []; 
-    this.arrLength = this.arr.length; 
+    this.arr = [];  
     this.compareFunction = (a, b) => a-b; 
     this.isCompareFuction = false;
   } 
@@ -30,7 +29,6 @@ class Sorter {
   sort(indices) { 
   // your implementation
     let newArr = []; 
-    let arrLength = this.arr.length; 
     let indicesLength = indices.length; 
    
     indices.sort((a, b) => a-b); 
