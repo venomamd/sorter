@@ -1,31 +1,68 @@
-class Sorter {
-  constructor() {
-    // your implementation
-  }
+class Sorter { 
+  constructor() { 
+  // your implementation 
+    this.arr = []; 
+    this.arrLength = this.arr.length; 
+    this.compareFunction = (a, b) => a-b; 
+    this.isCompareFuction = false;
+  } 
+  
+  add(element) { 
+  // your implementation 
+    this.arr.push(element); 
+  } 
+  
+  at(index) { 
+  // your implementation 
+    return this.arr[index]; 
+  } 
+  
+  get length() { 
+  // your implementation 
+    return this.arr.length; 
+  } 
+  
+  toArray() { 
+  // your implementation 
+    return this.arr; 
+  } 
+  
+  sort(indices) { 
+  // your implementation
+    let newArr = []; 
+    let arrLength = this.arr.length; 
+    let indicesLength = indices.length; 
+   
+    indices.sort((a, b) => a-b); 
+  
+    for(let i = 0; i < indicesLength; i++) { 
+    newArr.push(this.arr[indices[i]]); 
+    } 
+  
+    if(!this.isCompareFuction){ 
+ 
+      newArr.sort((a, b) => a-b); 
+    } 
+    else{ 
+      newArr.sort(this.compareFunction); 
+    } 
 
-  add(element) {
-    // your implementation
-  }
+    let length = newArr.length;
 
-  at(index) {
-    // your implementation
-  }
+    for(let i = 0; i < length; i++){ 
+      this.arr[indices[i]] = newArr[i]; 
+    } 
+  } 
+  
+  setComparator(compareFunction) { 
+    // your implementation 
+    this.isCompareFuction = true;
+    this.compareFunction = compareFunction; 
+  } 
 
-  get length() {
-    // your implementation
-  }
+} 
+  
 
-  toArray() {
-    // your implementation
-  }
-
-  sort(indices) {
-    // your implementation
-  }
-
-  setComparator(compareFunction) {
-    // your implementation
-  }
-}
-
-module.exports = Sorter;
+  module.exports = Sorter;
+  
+  
